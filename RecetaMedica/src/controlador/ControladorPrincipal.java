@@ -13,6 +13,8 @@ public class ControladorPrincipal implements ActionListener{
 		this.frm_principal.setVisible(true);	
 		this.frm_principal.jmiSalir.addActionListener(this);
 		this.frm_principal.jmiFabricante.addActionListener(this);
+		this.frm_principal.jmiProveedor.addActionListener(this);
+		this.frm_principal.jmiMedicamento.addActionListener(this);
 	}
 
 	@Override
@@ -26,6 +28,17 @@ public class ControladorPrincipal implements ActionListener{
 			frmFabricante frm_fabricante = new frmFabricante();
 			ControladorFabricante controlador_fabricante= new ControladorFabricante(frm_fabricante);
 		}
+		
+		if(evento.getSource()==this.frm_principal.jmiProveedor) {
+			frmProveedor frm_proveedor = new frmProveedor();
+			ControladorProveedor controlador_proveedor= new ControladorProveedor(frm_proveedor);
+		}
+		
+		if(evento.getSource()==this.frm_principal.jmiMedicamento) {
+			frmMedicamento frm_medicamento = new frmMedicamento();
+			ControladorMedicamento controlador_medicamento= new ControladorMedicamento(frm_medicamento);			
+		}
+		
 		
 	}	
 }

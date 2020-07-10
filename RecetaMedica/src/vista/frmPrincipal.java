@@ -41,14 +41,19 @@ public class frmPrincipal extends javax.swing.JFrame {
         jmInventario = new javax.swing.JMenu();
         jmiIngreso = new javax.swing.JMenuItem();
         jmiEgreso = new javax.swing.JMenuItem();
-        jmiMedicamento = new javax.swing.JMenuItem();
         jmiProveedor = new javax.swing.JMenuItem();
+        jmMedicamento = new javax.swing.JMenu();
+        jmiMedicamento = new javax.swing.JMenuItem();
+        jmiEnfermedad = new javax.swing.JMenuItem();
+        jmiCondicionAlmacenamiento = new javax.swing.JMenuItem();
+        jmiFormaFarmaceutica = new javax.swing.JMenuItem();
+        jmiViaAdministracion = new javax.swing.JMenuItem();
         jmiFabricante = new javax.swing.JMenuItem();
         jmReporte = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Receta");
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
         kGradientPanel1.setkEndColor(new java.awt.Color(51, 51, 51));
         kGradientPanel1.setkStartColor(new java.awt.Color(221, 24, 24));
@@ -107,12 +112,6 @@ public class frmPrincipal extends javax.swing.JFrame {
         });
         jmInventario.add(jmiEgreso);
 
-        jmIngreso.add(jmInventario);
-
-        jmiMedicamento.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jmiMedicamento.setText("Medicamento");
-        jmIngreso.add(jmiMedicamento);
-
         jmiProveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jmiProveedor.setText("Proveedor");
         jmiProveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -120,11 +119,63 @@ public class frmPrincipal extends javax.swing.JFrame {
                 jmiProveedorActionPerformed(evt);
             }
         });
-        jmIngreso.add(jmiProveedor);
+        jmInventario.add(jmiProveedor);
+
+        jmIngreso.add(jmInventario);
+
+        jmMedicamento.setText("Medicamento");
+        jmMedicamento.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+
+        jmiMedicamento.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jmiMedicamento.setText("Codificacion");
+        jmiMedicamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiMedicamentoActionPerformed(evt);
+            }
+        });
+        jmMedicamento.add(jmiMedicamento);
+
+        jmiEnfermedad.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jmiEnfermedad.setText("Enfermedad");
+        jmiEnfermedad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiEnfermedadActionPerformed(evt);
+            }
+        });
+        jmMedicamento.add(jmiEnfermedad);
+
+        jmiCondicionAlmacenamiento.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jmiCondicionAlmacenamiento.setText("Condicion de Almacenamiento");
+        jmiCondicionAlmacenamiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiCondicionAlmacenamientoActionPerformed(evt);
+            }
+        });
+        jmMedicamento.add(jmiCondicionAlmacenamiento);
+
+        jmiFormaFarmaceutica.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jmiFormaFarmaceutica.setText("Forma Farmaceutica");
+        jmiFormaFarmaceutica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiFormaFarmaceuticaActionPerformed(evt);
+            }
+        });
+        jmMedicamento.add(jmiFormaFarmaceutica);
+
+        jmiViaAdministracion.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jmiViaAdministracion.setText("Via de Administracion");
+        jmiViaAdministracion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiViaAdministracionActionPerformed(evt);
+            }
+        });
+        jmMedicamento.add(jmiViaAdministracion);
 
         jmiFabricante.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jmiFabricante.setText("Fabricante");
-        jmIngreso.add(jmiFabricante);
+        jmMedicamento.add(jmiFabricante);
+
+        jmIngreso.add(jmMedicamento);
 
         jmbMenu.add(jmIngreso);
 
@@ -160,55 +211,47 @@ public class frmPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jmiProveedorActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jmiMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiMedicamentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiMedicamentoActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmPrincipal().setVisible(true);
-            }
-        });
-    }
+    private void jmiEnfermedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiEnfermedadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiEnfermedadActionPerformed
+
+    private void jmiCondicionAlmacenamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCondicionAlmacenamientoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiCondicionAlmacenamientoActionPerformed
+
+    private void jmiFormaFarmaceuticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiFormaFarmaceuticaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiFormaFarmaceuticaActionPerformed
+
+    private void jmiViaAdministracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiViaAdministracionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiViaAdministracionActionPerformed
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jmArchivo;
     private javax.swing.JMenu jmIngreso;
     private javax.swing.JMenu jmInventario;
+    private javax.swing.JMenu jmMedicamento;
     private javax.swing.JMenu jmReporte;
     private javax.swing.JMenuBar jmbMenu;
     public javax.swing.JMenuItem jmiAcercaDe;
+    public javax.swing.JMenuItem jmiCondicionAlmacenamiento;
     public javax.swing.JMenuItem jmiEgreso;
+    public javax.swing.JMenuItem jmiEnfermedad;
     public javax.swing.JMenuItem jmiFabricante;
+    public javax.swing.JMenuItem jmiFormaFarmaceutica;
     public javax.swing.JMenuItem jmiIngreso;
     public javax.swing.JMenuItem jmiMedicamento;
     public javax.swing.JMenuItem jmiProveedor;
     public javax.swing.JMenuItem jmiReceta;
     public javax.swing.JMenuItem jmiSalir;
+    public javax.swing.JMenuItem jmiViaAdministracion;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }

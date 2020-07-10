@@ -14,21 +14,21 @@ import modelo.TextPrompt;
  *
  * @author judag
  */
-public class frmProveedor extends javax.swing.JFrame {
+public class frmViaAdministracion extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmProveedor
+     * Creates new form frmViaAdministracion
      */
-    public frmProveedor() {
+    public frmViaAdministracion() {
         initComponents();
-         this.jgdProveedor.getTableHeader().setFont(new Font("Century Gothic", Font.PLAIN, 14));
-         JTableHeader cabecera = this.jgdProveedor.getTableHeader();
+         this.jgdVia.getTableHeader().setFont(new Font("Century Gothic", Font.PLAIN, 14));
+         JTableHeader cabecera = this.jgdVia.getTableHeader();
          cabecera.setOpaque(false);
          cabecera.setBackground(new Color(96,126,156));
          cabecera.setForeground(Color.white);
          cabecera.setReorderingAllowed(false);
          this.setLocationRelativeTo(null);
-         TextPrompt placeHolderBuscar = new TextPrompt("Ingrese su busqueda", txtBuscar);          
+         TextPrompt placeHolderBuscar = new TextPrompt("Ingrese su busqueda", txtBuscar);            
     }
 
     /**
@@ -44,8 +44,8 @@ public class frmProveedor extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         txtBuscar = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        jspProveedor = new javax.swing.JScrollPane();
-        jgdProveedor = new javax.swing.JTable();
+        jspVia = new javax.swing.JScrollPane();
+        jgdVia = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         btnIngresar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
@@ -53,7 +53,7 @@ public class frmProveedor extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Proveedor");
+        setTitle("ViaAdministracion");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -83,39 +83,30 @@ public class frmProveedor extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new java.awt.GridLayout(1, 0));
 
-        jspProveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jspVia.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
 
-        jgdProveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jgdProveedor.setModel(new javax.swing.table.DefaultTableModel(
+        jgdVia.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jgdVia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id", "Razon Social", "Correo", "Direccion", "Telefono", "Representante Legal", "Permiso Operacion"
+                "Id", "Nombre"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jgdProveedor.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jgdProveedor.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jspProveedor.setViewportView(jgdProveedor);
-        if (jgdProveedor.getColumnModel().getColumnCount() > 0) {
-            jgdProveedor.getColumnModel().getColumn(0).setResizable(false);
-            jgdProveedor.getColumnModel().getColumn(1).setResizable(false);
-            jgdProveedor.getColumnModel().getColumn(2).setResizable(false);
-            jgdProveedor.getColumnModel().getColumn(3).setResizable(false);
-            jgdProveedor.getColumnModel().getColumn(4).setResizable(false);
-            jgdProveedor.getColumnModel().getColumn(5).setResizable(false);
-            jgdProveedor.getColumnModel().getColumn(6).setResizable(false);
-        }
+        jgdVia.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jgdVia.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jspVia.setViewportView(jgdVia);
 
-        jPanel4.add(jspProveedor);
+        jPanel4.add(jspVia);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -171,7 +162,6 @@ public class frmProveedor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnEliminar;
@@ -181,8 +171,8 @@ public class frmProveedor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    public javax.swing.JTable jgdProveedor;
-    public javax.swing.JScrollPane jspProveedor;
+    public javax.swing.JTable jgdVia;
+    public javax.swing.JScrollPane jspVia;
     public javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }

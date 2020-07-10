@@ -14,21 +14,21 @@ import modelo.TextPrompt;
  *
  * @author judag
  */
-public class frmProveedor extends javax.swing.JFrame {
+public class frmListarCondicionAlmacenamiento extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmProveedor
+     * Creates new form frmListarCondicionAlmacenamiento
      */
-    public frmProveedor() {
+    public frmListarCondicionAlmacenamiento() {
         initComponents();
-         this.jgdProveedor.getTableHeader().setFont(new Font("Century Gothic", Font.PLAIN, 14));
-         JTableHeader cabecera = this.jgdProveedor.getTableHeader();
+         this.jgdCondicion.getTableHeader().setFont(new Font("Century Gothic", Font.PLAIN, 14));
+         JTableHeader cabecera = this.jgdCondicion.getTableHeader();
          cabecera.setOpaque(false);
          cabecera.setBackground(new Color(96,126,156));
          cabecera.setForeground(Color.white);
          cabecera.setReorderingAllowed(false);
          this.setLocationRelativeTo(null);
-         TextPrompt placeHolderBuscar = new TextPrompt("Ingrese su busqueda", txtBuscar);          
+         TextPrompt placeHolderBuscar = new TextPrompt("Ingrese su busqueda", txtBuscar);           
     }
 
     /**
@@ -44,16 +44,15 @@ public class frmProveedor extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         txtBuscar = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        jspProveedor = new javax.swing.JScrollPane();
-        jgdProveedor = new javax.swing.JTable();
+        jspCondicion = new javax.swing.JScrollPane();
+        jgdCondicion = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
+        btnSeleccionar = new javax.swing.JButton();
         btnIngresar = new javax.swing.JButton();
-        btnModificar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Proveedor");
+        setTitle("ListarCondicionAlmacenamiento");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -83,53 +82,40 @@ public class frmProveedor extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new java.awt.GridLayout(1, 0));
 
-        jspProveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jspCondicion.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
 
-        jgdProveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jgdProveedor.setModel(new javax.swing.table.DefaultTableModel(
+        jgdCondicion.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jgdCondicion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id", "Razon Social", "Correo", "Direccion", "Telefono", "Representante Legal", "Permiso Operacion"
+                "Id", "Humedad", "Temperatura"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jgdProveedor.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jgdProveedor.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jspProveedor.setViewportView(jgdProveedor);
-        if (jgdProveedor.getColumnModel().getColumnCount() > 0) {
-            jgdProveedor.getColumnModel().getColumn(0).setResizable(false);
-            jgdProveedor.getColumnModel().getColumn(1).setResizable(false);
-            jgdProveedor.getColumnModel().getColumn(2).setResizable(false);
-            jgdProveedor.getColumnModel().getColumn(3).setResizable(false);
-            jgdProveedor.getColumnModel().getColumn(4).setResizable(false);
-            jgdProveedor.getColumnModel().getColumn(5).setResizable(false);
-            jgdProveedor.getColumnModel().getColumn(6).setResizable(false);
-        }
+        jgdCondicion.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jgdCondicion.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jspCondicion.setViewportView(jgdCondicion);
 
-        jPanel4.add(jspProveedor);
+        jPanel4.add(jspCondicion);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnSeleccionar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        btnSeleccionar.setText("Seleccionar");
+        jPanel3.add(btnSeleccionar);
 
         btnIngresar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         btnIngresar.setText("Ingresar");
         jPanel3.add(btnIngresar);
-
-        btnModificar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        btnModificar.setText("Modificar");
-        jPanel3.add(btnModificar);
-
-        btnEliminar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        btnEliminar.setText("Eliminar");
-        jPanel3.add(btnEliminar);
 
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
@@ -174,15 +160,14 @@ public class frmProveedor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCancelar;
-    public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnIngresar;
-    public javax.swing.JButton btnModificar;
+    public javax.swing.JButton btnSeleccionar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    public javax.swing.JTable jgdProveedor;
-    public javax.swing.JScrollPane jspProveedor;
+    public javax.swing.JTable jgdCondicion;
+    public javax.swing.JScrollPane jspCondicion;
     public javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }

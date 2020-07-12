@@ -14,21 +14,21 @@ import modelo.TextPrompt;
  *
  * @author judag
  */
-public class frmListarCondicionAlmacenamiento extends javax.swing.JFrame {
+public class frmModificarTransaccion extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmListarCondicionAlmacenamiento
+     * Creates new form frmModificarTransaccion
      */
-    public frmListarCondicionAlmacenamiento() {
+    public frmModificarTransaccion() {
         initComponents();
-         this.jgdCondicion.getTableHeader().setFont(new Font("Century Gothic", Font.PLAIN, 14));
-         JTableHeader cabecera = this.jgdCondicion.getTableHeader();
-         cabecera.setOpaque(false);
-         cabecera.setBackground(new Color(96,126,156));
-         cabecera.setForeground(Color.white);
-         cabecera.setReorderingAllowed(false);
-         this.setLocationRelativeTo(null);
-         TextPrompt placeHolderBuscar = new TextPrompt("Ingrese su busqueda", txtBuscar);           
+        this.setLocationRelativeTo(null);
+        TextPrompt placeHolderCantidad = new TextPrompt("Cantidad", txtCantidad);
+        this.jgdMedicamento.getTableHeader().setFont(new Font("Century Gothic", Font.PLAIN, 14));
+        JTableHeader cabecera = this.jgdMedicamento.getTableHeader();
+        cabecera.setOpaque(false);
+        cabecera.setBackground(new Color(96, 126, 156));
+        cabecera.setForeground(Color.white);
+        cabecera.setReorderingAllowed(false);
     }
 
     /**
@@ -42,85 +42,60 @@ public class frmListarCondicionAlmacenamiento extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        txtBuscar = new javax.swing.JTextField();
+        txtCantidad = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        jspCondicion = new javax.swing.JScrollPane();
-        jgdCondicion = new javax.swing.JTable();
+        jspMedicamento = new javax.swing.JScrollPane();
+        jgdMedicamento = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
-        btnSeleccionar = new javax.swing.JButton();
-        btnIngresar = new javax.swing.JButton();
+        btnAceptar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("ListarCondicionAlmacenamiento");
+        setTitle("ModificarTransaccion");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new java.awt.GridLayout(1, 1, 0, 5));
 
-        txtBuscar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txtBuscar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtBuscar)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        txtCantidad.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtCantidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel2.add(txtCantidad);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setLayout(new java.awt.GridLayout(1, 0));
+        jPanel4.setLayout(new java.awt.GridLayout());
 
-        jspCondicion.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jspMedicamento.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
 
-        jgdCondicion.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jgdCondicion.setModel(new javax.swing.table.DefaultTableModel(
+        jgdMedicamento.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jgdMedicamento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id", "Humedad", "Temperatura"
+                "Id", "Nombre Comercial", "Precio Venta", "Activo", "Fecha Creacion"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jgdCondicion.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jgdCondicion.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jspCondicion.setViewportView(jgdCondicion);
-        if (jgdCondicion.getColumnModel().getColumnCount() > 0) {
-            jgdCondicion.getColumnModel().getColumn(0).setResizable(false);
-            jgdCondicion.getColumnModel().getColumn(1).setResizable(false);
-            jgdCondicion.getColumnModel().getColumn(2).setResizable(false);
-        }
+        jgdMedicamento.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jgdMedicamento.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jspMedicamento.setViewportView(jgdMedicamento);
 
-        jPanel4.add(jspCondicion);
+        jPanel4.add(jspMedicamento);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnSeleccionar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        btnSeleccionar.setText("Seleccionar");
-        jPanel3.add(btnSeleccionar);
-
-        btnIngresar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        btnIngresar.setText("Ingresar");
-        jPanel3.add(btnIngresar);
+        btnAceptar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        btnAceptar.setText("Aceptar");
+        jPanel3.add(btnAceptar);
 
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
@@ -130,19 +105,21 @@ public class frmListarCondicionAlmacenamiento extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -162,17 +139,15 @@ public class frmListarCondicionAlmacenamiento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnAceptar;
     public javax.swing.JButton btnCancelar;
-    public javax.swing.JButton btnIngresar;
-    public javax.swing.JButton btnSeleccionar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    public javax.swing.JTable jgdCondicion;
-    public javax.swing.JScrollPane jspCondicion;
-    public javax.swing.JTextField txtBuscar;
+    public javax.swing.JTable jgdMedicamento;
+    public javax.swing.JScrollPane jspMedicamento;
+    public javax.swing.JTextField txtCantidad;
     // End of variables declaration//GEN-END:variables
 }

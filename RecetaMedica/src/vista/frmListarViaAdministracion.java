@@ -104,6 +104,10 @@ public class frmListarViaAdministracion extends javax.swing.JFrame {
         jgdVia.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jgdVia.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jspVia.setViewportView(jgdVia);
+        if (jgdVia.getColumnModel().getColumnCount() > 0) {
+            jgdVia.getColumnModel().getColumn(0).setResizable(false);
+            jgdVia.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         jPanel4.add(jspVia);
 

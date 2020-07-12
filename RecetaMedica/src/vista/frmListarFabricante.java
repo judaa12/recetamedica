@@ -87,6 +87,15 @@ public class frmListarFabricante extends javax.swing.JFrame {
         jgdFabricante.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jgdFabricante.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jspFabricante.setViewportView(jgdFabricante);
+        if (jgdFabricante.getColumnModel().getColumnCount() > 0) {
+            jgdFabricante.getColumnModel().getColumn(0).setResizable(false);
+            jgdFabricante.getColumnModel().getColumn(1).setResizable(false);
+            jgdFabricante.getColumnModel().getColumn(2).setResizable(false);
+            jgdFabricante.getColumnModel().getColumn(3).setResizable(false);
+            jgdFabricante.getColumnModel().getColumn(4).setResizable(false);
+            jgdFabricante.getColumnModel().getColumn(5).setResizable(false);
+            jgdFabricante.getColumnModel().getColumn(6).setResizable(false);
+        }
 
         jPanel4.add(jspFabricante);
 

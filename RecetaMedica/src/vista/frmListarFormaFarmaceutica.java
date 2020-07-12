@@ -104,6 +104,10 @@ public class frmListarFormaFarmaceutica extends javax.swing.JFrame {
         jgdForma.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jgdForma.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jspForma.setViewportView(jgdForma);
+        if (jgdForma.getColumnModel().getColumnCount() > 0) {
+            jgdForma.getColumnModel().getColumn(0).setResizable(false);
+            jgdForma.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         jPanel4.add(jspForma);
 

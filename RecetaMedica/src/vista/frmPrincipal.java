@@ -39,8 +39,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jmIngreso = new javax.swing.JMenu();
         jmiReceta = new javax.swing.JMenuItem();
         jmInventario = new javax.swing.JMenu();
-        jmiIngreso = new javax.swing.JMenuItem();
-        jmiEgreso = new javax.swing.JMenuItem();
+        jmiInventario = new javax.swing.JMenuItem();
         jmiProveedor = new javax.swing.JMenuItem();
         jmMedicamento = new javax.swing.JMenu();
         jmiMedicamento = new javax.swing.JMenuItem();
@@ -94,23 +93,14 @@ public class frmPrincipal extends javax.swing.JFrame {
         jmInventario.setText("Inventario");
         jmInventario.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
 
-        jmiIngreso.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jmiIngreso.setText("Ingreso");
-        jmiIngreso.addActionListener(new java.awt.event.ActionListener() {
+        jmiInventario.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jmiInventario.setText("Codificacion");
+        jmiInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiIngresoActionPerformed(evt);
+                jmiInventarioActionPerformed(evt);
             }
         });
-        jmInventario.add(jmiIngreso);
-
-        jmiEgreso.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jmiEgreso.setText("Egreso");
-        jmiEgreso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiEgresoActionPerformed(evt);
-            }
-        });
-        jmInventario.add(jmiEgreso);
+        jmInventario.add(jmiInventario);
 
         jmiProveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jmiProveedor.setText("Proveedor");
@@ -199,13 +189,9 @@ public class frmPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jmiIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiIngresoActionPerformed
+    private void jmiInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiInventarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jmiIngresoActionPerformed
-
-    private void jmiEgresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiEgresoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmiEgresoActionPerformed
+    }//GEN-LAST:event_jmiInventarioActionPerformed
 
     private void jmiProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiProveedorActionPerformed
         // TODO add your handling code here:
@@ -242,11 +228,10 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jmbMenu;
     public javax.swing.JMenuItem jmiAcercaDe;
     public javax.swing.JMenuItem jmiCondicionAlmacenamiento;
-    public javax.swing.JMenuItem jmiEgreso;
     public javax.swing.JMenuItem jmiEnfermedad;
     public javax.swing.JMenuItem jmiFabricante;
     public javax.swing.JMenuItem jmiFormaFarmaceutica;
-    public javax.swing.JMenuItem jmiIngreso;
+    public javax.swing.JMenuItem jmiInventario;
     public javax.swing.JMenuItem jmiMedicamento;
     public javax.swing.JMenuItem jmiProveedor;
     public javax.swing.JMenuItem jmiReceta;

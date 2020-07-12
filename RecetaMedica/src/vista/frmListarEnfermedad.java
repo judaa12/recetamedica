@@ -101,9 +101,17 @@ public class frmListarEnfermedad extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jgdEnfermedad.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jgdEnfermedad.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jgdEnfermedad.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        jgdEnfermedad.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         jspEnfermedad.setViewportView(jgdEnfermedad);
+        if (jgdEnfermedad.getColumnModel().getColumnCount() > 0) {
+            jgdEnfermedad.getColumnModel().getColumn(0).setResizable(false);
+            jgdEnfermedad.getColumnModel().getColumn(1).setResizable(false);
+            jgdEnfermedad.getColumnModel().getColumn(2).setResizable(false);
+            jgdEnfermedad.getColumnModel().getColumn(3).setResizable(false);
+            jgdEnfermedad.getColumnModel().getColumn(4).setResizable(false);
+            jgdEnfermedad.getColumnModel().getColumn(5).setResizable(false);
+        }
 
         jPanel4.add(jspEnfermedad);
 

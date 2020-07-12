@@ -19,6 +19,8 @@ public class ControladorPrincipal implements ActionListener{
 		this.frm_principal.jmiCondicionAlmacenamiento.addActionListener(this);
 		this.frm_principal.jmiFormaFarmaceutica.addActionListener(this);
 		this.frm_principal.jmiViaAdministracion.addActionListener(this);
+		this.frm_principal.jmiReceta.addActionListener(this);
+		this.frm_principal.jmiInventario.addActionListener(this);
 	}
 
 	@Override
@@ -61,6 +63,17 @@ public class ControladorPrincipal implements ActionListener{
 		if(evento.getSource()==this.frm_principal.jmiViaAdministracion) {
 			frmViaAdministracion frm_via_administracion = new frmViaAdministracion();
 			ControladorViaAdministracion controlador_via_administracion = new ControladorViaAdministracion(frm_via_administracion);
+		}
+		
+		if(evento.getSource()==this.frm_principal.jmiReceta) {
+			frmReceta frm_receta = new frmReceta();
+			ControladorReceta controlador_receta = new ControladorReceta(frm_receta);
+			
+		}
+		
+		if(evento.getSource()==this.frm_principal.jmiInventario) {
+			frmInventario frm_inventario = new frmInventario();
+			ControladorInventario controlador_inventario = new ControladorInventario(frm_inventario);
 		}
 		
 	}	

@@ -5,7 +5,12 @@ import java.awt.event.ActionListener;
 
 import vista.frmCondicionAlmacenamiento;
 import vista.frmFormaFarmaceutica;
+import vista.frmIngresarCondicionAlmacenamiento;
+import vista.frmIngresarEnfermedad;
+import vista.frmIngresarFabricante;
+import vista.frmIngresarFormaFarmaceutica;
 import vista.frmIngresarMedicamento;
+import vista.frmIngresarViaAdministracion;
 import vista.frmListarCondicionAlmacenamiento;
 import vista.frmListarEnfermedad;
 import vista.frmListarFabricante;
@@ -21,11 +26,11 @@ public class ControladorIngresarMedicamento implements ActionListener{
 		this.frm_ingresar_medicamento.setVisible(true);
 		this.frm_ingresar_medicamento.btnAceptar.addActionListener(this);
 		this.frm_ingresar_medicamento.btnCancelar.addActionListener(this);	
-		this.frm_ingresar_medicamento.btnEnfermedad.addActionListener(this);
-		this.frm_ingresar_medicamento.btnFabricante.addActionListener(this);
-		this.frm_ingresar_medicamento.btnCondicion.addActionListener(this);
-		this.frm_ingresar_medicamento.btnFormaFarmaceutica.addActionListener(this);
-		this.frm_ingresar_medicamento.btnViaAdministracion.addActionListener(this);
+		this.frm_ingresar_medicamento.btnIngresarEnfermedad.addActionListener(this);
+		this.frm_ingresar_medicamento.btnIngresarFabricante.addActionListener(this);
+		this.frm_ingresar_medicamento.btnIngresarCondicion.addActionListener(this);
+		this.frm_ingresar_medicamento.btnIngresarForma.addActionListener(this);
+		this.frm_ingresar_medicamento.btnIngresarVia.addActionListener(this);
 	}
 
 	@Override
@@ -35,36 +40,38 @@ public class ControladorIngresarMedicamento implements ActionListener{
 			this.frm_ingresar_medicamento.dispose();
 		}
 		
-		if(evento.getSource()==this.frm_ingresar_medicamento.btnEnfermedad) {
-			frmListarEnfermedad frm_listar_enfermedad = new frmListarEnfermedad();
-			ControladorListarEnfermedad controlador_listar_enfermedad = new ControladorListarEnfermedad(frm_listar_enfermedad);
-		}
-		
-		if(evento.getSource()==this.frm_ingresar_medicamento.btnFabricante) {
-			frmListarFabricante frm_listar_fabricante = new frmListarFabricante();
-			ControladorListarFabricante controlador_listar_fabricante = new ControladorListarFabricante(frm_listar_fabricante);
-		}
 
-		if(evento.getSource()==this.frm_ingresar_medicamento.btnCondicion) {
-			frmListarCondicionAlmacenamiento frm_listar_condicion_almacenamiento = new frmListarCondicionAlmacenamiento();
-			ControladorListarCondicionAlmacenamiento controlador_listar_condicion_almacenamiento = new ControladorListarCondicionAlmacenamiento(frm_listar_condicion_almacenamiento);
-		}
-		
-		if(evento.getSource()==this.frm_ingresar_medicamento.btnFormaFarmaceutica) {
-			frmListarFormaFarmaceutica frm_listar_forma_farmaceutica = new frmListarFormaFarmaceutica();
-			ControladorListarFormaFarmaceutica controlador_listar_forma_farmaceutica = new ControladorListarFormaFarmaceutica(frm_listar_forma_farmaceutica);
-		}
-		
-		if(evento.getSource()==this.frm_ingresar_medicamento.btnViaAdministracion) {
-			frmListarViaAdministracion frm_listar_via_administracion = new frmListarViaAdministracion();
-			ControladorListarViaAdministracion controlador_listar_via_administracion = new ControladorListarViaAdministracion(frm_listar_via_administracion);
-		}
 		
 		if(evento.getSource()==this.frm_ingresar_medicamento.btnAceptar) {
 			
 		}
 		
+		if(evento.getSource()==this.frm_ingresar_medicamento.btnIngresarEnfermedad) {
+			frmIngresarEnfermedad frm_ingresar_enfermedad = new frmIngresarEnfermedad();
+			ControladorIngresarEnfermedad controlador_ingresar_enfermedad = new ControladorIngresarEnfermedad(frm_ingresar_enfermedad);
+		}
 		
+		if(evento.getSource()==this.frm_ingresar_medicamento.btnIngresarFabricante) {
+			frmIngresarFabricante frm_ingresar_fabricante = new frmIngresarFabricante();
+			ControladorIngresarFabricante controlador_ingresar_fabricante = new ControladorIngresarFabricante(frm_ingresar_fabricante);			
+		}
+		
+		if(evento.getSource()==this.frm_ingresar_medicamento.btnIngresarCondicion) {
+			frmIngresarCondicionAlmacenamiento frm_ingresar_condicion_almacenamiento = new frmIngresarCondicionAlmacenamiento();
+			ControladorIngresarCondicionAlmacenamiento controlador_ingresar_condicion_almacenamiento = new ControladorIngresarCondicionAlmacenamiento(frm_ingresar_condicion_almacenamiento);			
+		}
+		
+		if(evento.getSource()==this.frm_ingresar_medicamento.btnIngresarForma) {
+			frmIngresarFormaFarmaceutica frm_ingresar_forma_farmaceutica = new frmIngresarFormaFarmaceutica();
+			ControladorIngresarFormaFarmaceutica controlador_forma_farmaceutica = new ControladorIngresarFormaFarmaceutica(frm_ingresar_forma_farmaceutica);			
+		}
+		
+		if(evento.getSource()==this.frm_ingresar_medicamento.btnIngresarVia) {
+			frmIngresarViaAdministracion frm_ingresar_via_administracion = new frmIngresarViaAdministracion();
+			ControladorIngresarViaAdministracion controlador_ingresar_via_administracion = new ControladorIngresarViaAdministracion(frm_ingresar_via_administracion);			
+		}		
+			
+			
 	}
 
 }
